@@ -7,44 +7,44 @@
 -- two dots ('..' - without quotes).
 
 CREATE TABLE "departments" (
-    "dept_no" int   NOT NULL,
-    "dept_name" string   NOT NULL,
+    "dept_no" VARCHAR(4)   NOT NULL,
+    "dept_name" VARCHAR(200)   NOT NULL,
     CONSTRAINT "pk_departments" PRIMARY KEY (
         "dept_no"
      )
 );
 
 CREATE TABLE "dept_emp" (
-    "dept_no" int   NOT NULL,
-    "emp_no" int   NOT NULL
+    "dept_no" VARCHAR(4)   NOT NULL,
+    "emp_no" INT   NOT NULL
 );
 
 CREATE TABLE "dept_manager" (
-    "dept_no" int   NOT NULL,
-    "emp_no" int   NOT NULL
+    "dept_no" VARCHAR(4)   NOT NULL,
+    "emp_no" INT   NOT NULL
 );
 
 CREATE TABLE "employees" (
-    "emp_no" int   NOT NULL,
-    "emp_title_id" string   NOT NULL,
-    "birth_date" string   NOT NULL,
-    "first_name" string   NOT NULL,
-    "last_name" string   NOT NULL,
-    "sex" string   NOT NULL,
-    "hire_date" string   NOT NULL,
+    "emp_no" INT   NOT NULL,
+    "emp_title_id" VARCHAR(5)   NOT NULL,
+    "birth_date" VARCHAR(10)   NOT NULL,
+    "first_name" VARCHAR(200)   NOT NULL,
+    "last_name" VARCHAR(200)   NOT NULL,
+    "sex" VARCHAR(1)   NOT NULL,
+    "hire_date" VARCHAR(10)   NOT NULL,
     CONSTRAINT "pk_employees" PRIMARY KEY (
         "emp_no","emp_title_id"
      )
 );
 
 CREATE TABLE "salary" (
-    "emp_no" int   NOT NULL,
-    "salary" int   NOT NULL
+    "emp_no" INT   NOT NULL,
+    "salary" INT   NOT NULL
 );
 
 CREATE TABLE "titles" (
-    "title_id" string   NOT NULL,
-    "title" string   NOT NULL
+    "title_id" VARCHAR(5)   NOT NULL,
+    "title" VARCHAR(200)   NOT NULL
 );
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_dept_no" FOREIGN KEY("dept_no")
